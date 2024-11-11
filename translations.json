@@ -1,0 +1,14 @@
+{
+  "translations": [
+    "traduza isto",
+    "tradução modal"
+  ],
+  "fileMapping": {
+    "src/pages/componenteParaTraduzir.tsx": [
+      "traduza isto"
+    ],
+    "src/pages/modalAvulsa.tsx": [
+      "tradução modal"
+    ]
+  }
+}
