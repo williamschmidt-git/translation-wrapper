@@ -59,7 +59,6 @@ function processFilePaths(paths) {
             return;
         }
         
-        // Process each file
         filesToProcess.forEach(file => {
             const translations = extractTranslationKeys(file);
             if (translations.length > 0) {
@@ -76,7 +75,6 @@ function processFilePaths(paths) {
 }
 
 function main() {
-    // Get the file paths from command line arguments
     const args = process.argv.slice(2);
     
     if (args.length === 0) {
@@ -89,10 +87,8 @@ function main() {
     try {
         const { allTranslations, fileResults } = processFilePaths(args);
         
-        // Display results
         console.log('\n=== Translation Keys Found ===\n');
         
-        // Show results per file
         Object.entries(fileResults).forEach(([file, translations]) => {
             console.log(`\nFile: ${file}`);
             console.log('Translations:');
@@ -101,7 +97,6 @@ function main() {
             });
         });
         
-        // Show summary
         console.log('\n=== Summary ===');
         console.log(`Total unique translations found: ${allTranslations.length}`);
         console.log('\nAll unique translations:');
@@ -109,7 +104,6 @@ function main() {
             console.log(`${index + 1}. "${key}"`);
         });
         
-        // Optionally save to a JSON file
         const outputPath = 'translations.json';
         fs.writeFileSync(outputPath, JSON.stringify({
             translations: allTranslations,
